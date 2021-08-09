@@ -9,6 +9,22 @@
     box-sizing: border-box;
 }
 
+/* @keyframes move_left {
+    0% {
+        right: 0px;
+    }
+    100% {
+        right: 100px;
+    }
+}
+
+.move-left {
+    transform: translateX(-304px);
+    transition: transform 6s linear 0s;
+    position: relative;
+    overflow: hidden;
+} */
+
 html {
     font-size: 62.5%;
 }
@@ -17,6 +33,7 @@ body {
     font-family: "Noto Sans JP", sans-serif;
     background-color: #eee;
 }
+
 .player {
     position: relative;
     max-width: 480px;
@@ -44,10 +61,12 @@ body {
     background-color: #fff;
     border-bottom: 1px solid #ebebeb;
 }
+
 header {
     text-align: center;
     margin-bottom: 10px;
 }
+
 header h4 {
     color: var(--primary-color);
     font-size: 12px;
@@ -57,11 +76,13 @@ header h2 {
     color: var(--text-color);
     font-size: 20px;
 }
+
 .cd {
     display: block;
-    width: 200px;
+    width: 160px;
     margin: auto;
 }
+
 .cd-thumb {
     padding-top: 100%;
     border-radius: 50%;
@@ -76,19 +97,14 @@ header h2 {
     justify-content: space-around;
     padding: 20px 0 10px 0;
 }
+
 .control .btn {
     color: #666;
     padding: 18px;
     font-size: 18px;
 }
 
-.control .btn.active {
-    color: var(--primary-color);
-}
-
-.control .btn-toggle-play {
-    width: 55px;
-    height: 55px;
+.control .btn:active {
     background-color: var(--primary-color);
     border-radius: 50%;
     color: #fff;
@@ -96,10 +112,31 @@ header h2 {
     align-items: center;
     justify-content: center;
 }
+
+.control .btn.active:active {
+    color: #fff;
+}
+
+.control .btn.active {
+    color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+    width: 54px;
+    height: 54px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .btn-random.active,
 .btn-repeat.active {
     color: var(--primary-color);
 }
+
 .progress {
     width: 100%;
     overflow: hidden;
@@ -107,7 +144,7 @@ header h2 {
     height: 6px;
     background: #d3d3d3;
     outline: none;
-    opacity: 0.7;
+    opacity: 0.8;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
 }
@@ -126,12 +163,12 @@ header h2 {
 .playlist {
     padding: 12px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    margin-top: 395px;
+    margin-top: 355px;
 }
 .song {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     background-color: #fff;
     padding: 8px 16px;
     border-radius: 5px;
@@ -165,6 +202,11 @@ header h2 {
     margin-bottom: 4px;
     font-size: 18px;
     color: var(--text-color);
+    white-space: nowrap;
+    text-overflow: clip;
+    overflow: hidden;
+    display: block;
+    width: 300px;
 }
 .song .author {
     font-size: 12px;
