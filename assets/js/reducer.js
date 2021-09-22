@@ -36,7 +36,7 @@ const actions = {
     },
     clearCompleted(state) {
         state.todos = state.todos.filter(state.filters.active);
-        storage.set(todos);
+        storage.set(state.todos);
     },
     startEdit(state, index) {
         state.editIndex = index;
